@@ -13,27 +13,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet weak var imgView: UIImageView!
     
+    @IBOutlet weak var imgView2: UIImageView!
+    
     let imagePick = UIImagePickerController()
     
-        
-   
+    
     override func viewDidLoad() {
         
     }
    
-   
-
     @IBAction func addImageButton(_ sender: Any) {
-    
     
             let image = UIImagePickerController()
             image.delegate = self
             image.sourceType = UIImagePickerController.SourceType.photoLibrary
             image.allowsEditing = true
             self.present(image, animated: true, completion: nil)
-            
-        
     }
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -43,12 +40,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imgView.image = image
         self.dismiss(animated: true, completion: nil)
     }
-        
-    
 }
-
- 
-
     
     
     
